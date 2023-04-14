@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+  <tr>
+      <th>fname</th>
+      <th>lname</th>
+      <th>mobile</th>
+      <th>email</th>
+      <th>city</th>
+      <th>course</th>
+  </tr>
+    {% for student in data %}
+    <tr>
+        <td>{{student.fname}}</td>
+        <td>{{student.lname}}</td>
+        <td>{{student.mobile}}</td>
+        <td>{{student.email}}</td>
+        <td>{{student.city_name}}</td>
+        <td>{{student.course_name}}</td>
+        <td><a href="{% url 'studentdata' student.id %}">Update</a></td>
+        <td><a href="{% url 'deletedata' student.id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+  Fname <input type="text" id="tbfname" name="tbfname" value="{{data.fname}}"><br>
+  Lname <input type="text" id="tblname" name="tblname" value="{{data.lname}}"><br>
+  Mobile <input type="text" id="tbmobile" name="tbmobile" value="{{data.mobile}}"><br>
+  email <input type="text" id="tbemail" name="tbemail" value="{{data.email}}"><br>
+    City <select name="ddlcity">
+    <option selected>{{data.city_name}}</option>
+    {% for i in cities %}
+    <option>{{i.city_name}}</option>
+    {% endfor %}
+</select><br>
+    Course <select name="ddlcourse">
+    <option selected>{{data.course_name}}</option>
+    {% for i in course %}
+    <option>{{i.course_name}}</option>
+    {% endfor %}
+</select><br>
+    <input type="submit" value="update">
+</form>
+</body>
+</html>
